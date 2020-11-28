@@ -13,7 +13,7 @@
 
                     <div class="form-row">
                         <div class="form-group col">
-                            <label class="control-label" for="concepto">{{'concepto:'}}</label>
+                            <label class="control-label" for="concepto">{{'Concepto:'}}</label>
                             <input class="form-control {{ $errors->has('concepto')?'is-invalid':'' }}" type="text" name="concepto" id="concepto" value="{{ isset($concepto->concepto)?$concepto->concepto:old('concepto') }}">
                         
                             {!! $errors->first('concepto','<div class="invalid-feedback">:message</div>') !!}

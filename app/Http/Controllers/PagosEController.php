@@ -87,7 +87,7 @@ class PagosEController extends Controller
         
         DB::select('call Actualizar_pago(?,?,?,?)', $datos);
         
-        return redirect('pagosE')->with('Mensaje', 'Pago modificado con exito');
+        return redirect('pagosE')->with('Mensaje', 'Pago modificado con éxito');
     }
 
     /**

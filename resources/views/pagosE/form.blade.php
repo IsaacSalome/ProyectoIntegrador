@@ -1,4 +1,4 @@
-{{ $modo=='crear' ? ' ': 'Modificar Alumno'}} 
+{{ $modo=='crear' ? ' ': ' '}} 
   <div class="content">
     <div class="container-fluid">
       <div class="row">
@@ -14,7 +14,7 @@
                     <div class="form-row">
                       <div class="form-group col">
                           <label class="control-label" for="horasTrabajadas">{{'Horas de trabajo:'}}</label>
-                          <input class="form-control {{ $errors->has('horasTrabajadas')?'is-invalid':'' }}" type="text" name="horasTrabajadas" id="horasTrabajadas" value="{{ isset($pago->horasTrabajadas)?$pago->horasTrabajadas:old('horasTrabajadas') }}">
+                          <input class="form-control {{ $errors->has('horasTrabajadas')?'is-invalid':'' }}" type="text" name="horasTrabajadas" id="horasTrabajadas" value="{{ isset($pago->horasTrabajadas)?$pago->horasTrabajadas:old('horasTrabajadas') }}" required>
                       
                           {!! $errors->first('horasTrabajadas','<div class="invalid-feedback">:message</div>') !!}
                       
@@ -22,7 +22,7 @@
 
                       <div class="form-group col">
                           <label class="control-label" for="fecha">{{'Fecha:'}}</label>
-                          <input class="form-control {{ $errors->has('fecha')?'is-invalid':'' }}" type="date" name="fecha" id="fecha" value="{{ isset($pago->fecha)?$pago->fecha:old('fecha') }}">
+                          <input class="form-control {{ $errors->has('fecha')?'is-invalid':'' }}" type="date" name="fecha" id="fecha" value="{{ isset($pago->fecha)?$pago->fecha:old('fecha') }}" required>
                       
                           {!! $errors->first('fecha','<div class="invalid-feedback">:message</div>') !!}
                       

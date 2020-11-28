@@ -147,7 +147,7 @@ class AlumnosController extends Controller
         $Mensaje=["required" => 'El :attribute es requerido'];
         
         $this->validate($request, $campos, $Mensaje);
-        $datosAlumno=$request->except(['_token','_method']);
+        $datosAlumno=array_values($request->except(['_token','_method']));
 
         if($request->hasFile('foto')){
 

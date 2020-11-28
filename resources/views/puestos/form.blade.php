@@ -1,4 +1,4 @@
-{{ $modo=='crear' ? ' ': 'Modificar Alumno'}} 
+{{ $modo=='crear' ? ' ': ' '}} 
   <div class="content">
     <div class="container-fluid">
       <div class="row">

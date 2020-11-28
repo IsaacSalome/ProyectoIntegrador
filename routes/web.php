@@ -27,7 +27,11 @@ Route::resource('/empleados','App\Http\Controllers\EmpleadosController');
 Route::resource('/conceptos','App\Http\Controllers\ConceptosController');
 Route::resource('/pagosA','App\Http\Controllers\PagosAController');
 Route::resource('/pagosE','App\Http\Controllers\PagosEController');
+Route::resource('/soporte','App\Http\Controllers\SoporteController');
+Route::get('/getDownload','App\Http\Controllers\SoporteController@getDownload');
 
+Route::get('/email', 'App\Http\Controllers\EmailController@create');
+Route::post('/email', 'App\Http\Controllers\EmailController@sendEmail')->name('send.email');
 //Route::match(['get', 'post'], 'register', function(){
  //   return redirect('/');
 //});

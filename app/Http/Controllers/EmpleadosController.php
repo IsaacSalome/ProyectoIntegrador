@@ -28,7 +28,9 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
-        $datos['puestos']=puestos::paginate(5);
+        $empleado = Empleados::all();
+        $puestos = puestos::all();
+
 
         return view('empleados.create', compact('empleado','puestos'));
     }
@@ -74,7 +76,7 @@ class EmpleadosController extends Controller
 
         Empleados::insert($datos);
 
-        return redirect('empleados')->with('Mensaje','Concepto agregado con éxito');
+        return redirect('empleados')->with('Mensaje','Empleado agregado con éxito');
         }
 
     /**
@@ -168,12 +170,12 @@ class EmpleadosController extends Controller
      * @param  \App\Models\Empleados  $empleados
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id_Empleeados)
+    public function destroy( $id_Empleados)
     {
-        $empleado=Empleados::findOrFail($id_Empleeados);
-        if(Storage::delete('public/'.$empleado->foto)){
-            Empleados::destroy($id_Empleeados);
-        }
+        $empleado=Empleados::findOrFail($id_Empleados);
+        Storage::delete('public/'.$empleado->foto);
+            Empleados::destroy($id_Empleados);
+        
         return redirect('/empleados')->with('Mensaje','Empleado Eliminado con éxito');
 
     }

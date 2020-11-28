@@ -85,10 +85,16 @@ class PagosAController extends Controller
      * @param  \App\Models\pagosA  $pagosA
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pagosA $pagosA)
+    public function update(Request $request, $id_pagosA)
     {
-        //
-    }
+
+          $datos=$request->except('_method','_token');
+          
+          pagosA::where('id_pagosA','=',$id_pagosA)->update($datos);
+          
+          $concepto = pagosA::findOrFail($id_pagosA);
+          
+          return redirect('pagosA')->with('Mensaje','Pago modificado con éxito');    }
 
     /**
      * Remove the specified resource from storage.
@@ -96,8 +102,12 @@ class PagosAController extends Controller
      * @param  \App\Models\pagosA  $pagosA
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pagosA $pagosA)
+    public function destroy($pagosA)
     {
-        //
+        $pagoA=pagosA::findOrFail($pagosA);
+
+        pagosA::destroy($pagosA);
+
+        return redirect('/pagosA')->with('Mensaje','Pago Eliminado con éxito');
     }
 }

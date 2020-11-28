@@ -1,4 +1,4 @@
-  {{ $modo=='crear' ? ' ': 'Modificar Alumno'}} 
+  {{ $modo=='crear' ? ' ': ' '}} 
   <div class="content">
     <div class="container-fluid">
       <div class="row">
@@ -105,14 +105,14 @@
 
 
             <div class="form-group col">
-        <label class="control-label" for="correo">{{'correo:'}}</label>
+        <label class="control-label" for="correo">{{'Correo:'}}</label>
         <input  class="form-control {{ $errors->has('correo')?'is-invalid':'' }}" type="email" name="correo" id="correo" value="{{ isset($empleado->correo)?$empleado->correo:old('correo') }}" >
         {!! $errors->first('correo','<div class="invalid-feedback">:message</div>') !!}
 
     </div>
 
         <div class="form-group col">
-        <label class="control-label" for="telefono">{{'Telefono:'}}</label>
+        <label class="control-label" for="telefono">{{'Teléfono:'}}</label>
         <input  class="form-control {{ $errors->has('telefono')?'is-invalid':'' }}" type="text" name="telefono" id="telefono" value="{{ isset($empleado->telefono)?$empleado->telefono:old('telefono')}}" >
         {!! $errors->first('telefono','<div class="invalid-feedback">:message</div>') !!}
 
@@ -121,7 +121,7 @@
         <div class="form-row">
 
         <div class="form-group col">
-            <label class="control-label" for="curp">{{'curp:'}}</label>
+            <label class="control-label" for="curp">{{'Curp:'}}</label>
             <input  class="form-control {{ $errors->has('curp')?'is-invalid':'' }}" type="text" name="curp" id="curp" value="{{ isset($empleado->curp)?$empleado->curp:old('curp') }}" >
             {!! $errors->first('curp','<div class="invalid-feedback">:message</div>') !!}
     
@@ -146,7 +146,7 @@
 
 
     <div class="form-group">
-        <label class="control-label" for="foto">{{'foto del empleado:'}}</label>
+        <label class="control-label" for="foto">{{'Foto del Empleado:'}}</label>
 
     @if(isset($alumno->foto))
     <br>
@@ -167,4 +167,4 @@
     <input  type="submit" class="btn btn-success" value="{{ $modo=='crear' ? 'Agregar': 'Modificar'}}">
         {!! $errors->first('foto','<div class="invalid-feedback">:message</div>') !!}
 
-    <a class="btn btn-danger" href="{{ url('alumnos') }}">Cancelar</a>
+    <a class="btn btn-danger" href="{{ url('empleados') }}">Cancelar</a>

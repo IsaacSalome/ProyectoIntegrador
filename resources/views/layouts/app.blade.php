@@ -36,7 +36,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="/alumnos">
               <i class="material-icons">person</i>
-              <p>Registros de alumnos</p>
+              <p>Registro de Alumnos</p>
             </a>
           </li>
 
@@ -69,6 +69,22 @@
             </a>
           </li>
 
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/soporte">
+              <i class="material-icons">announcement</i>
+              <p>Soporte</p>
+            </a>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link" href="/getDownload">
+
+              <i class="material-icons">get_apps</i>
+              <p>Manual de usuario</p>
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -86,6 +102,7 @@
           <div class="collapse navbar-collapse justify-content-end">
           
             <ul class="navbar-nav">
+
 
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -21,9 +21,9 @@
         <tr>
             <th>#</th>
             <th>Concepto</th>
-            <th>fecha</th>
+            <th>Fecha</th>
             <th>Estudiante</th>
-            <th>total</th>
+            <th>Total</th>
 
             <th>Acciones</th>
         </tr>
@@ -43,7 +43,7 @@
             <td>{{ $pago->costo }}</td>
 
     
-
+  
 
 
             <td>
